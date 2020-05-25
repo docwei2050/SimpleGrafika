@@ -8,52 +8,46 @@
     <Button
         android:id="@+id/play_stop_button"
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="16dp"
         android:background="@color/colorPurple"
         android:onClick="clickPlayStop"
         android:text="播放"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         android:textColor="@android:color/white"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/playMovieFile_spinner"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/playMovieFile_spinner"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/playMovieFile_spinner"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/play_stop_button"
-        android:layout_marginEnd="36dp"
-        android:layout_toRightOf="@+id/play_stop_button"
+        app:layout_constraintLeft_toRightOf="@+id/play_stop_button"
+        app:layout_constraintRight_toLeftOf="@+id/locked60fps_checkbox"
         app:layout_constraintBottom_toBottomOf="@+id/play_stop_button"
-        app:layout_constraintEnd_toStartOf="@+id/locked60fps_checkbox"
         app:layout_constraintTop_toTopOf="@+id/play_stop_button" />
 
     <CheckBox
         android:id="@+id/locked60fps_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/play_stop_button"
-        android:layout_alignLeft="@+id/movie_texture_view"
-        android:layout_marginEnd="28dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorPurple"
         android:text="60帧播放"
+        app:layout_constraintLeft_toRightOf="@+id/playMovieFile_spinner"
+        app:layout_constraintRight_toLeftOf="@+id/loopPlayback_checkbox"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/play_stop_button"
-        app:layout_constraintEnd_toStartOf="@+id/loopPlayback_checkbox" />
+        app:layout_constraintBottom_toBottomOf="@+id/play_stop_button" />
 
     <CheckBox
         android:id="@+id/loopPlayback_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/locked60fps_checkbox"
-        android:layout_alignBottom="@+id/locked60fps_checkbox"
-        android:layout_marginEnd="28dp"
+        app:layout_constraintLeft_toRightOf="@+id/locked60fps_checkbox"
+       app:layout_constraintRight_toRightOf="parent"
         android:textColor="@android:color/white"
         android:background="@color/colorPurple"
         android:layout_toRightOf="@+id/locked60fps_checkbox"
@@ -66,10 +60,9 @@
         android:id="@+id/movie_texture_view"
         android:layout_width="409dp"
         android:layout_height="655dp"
-        android:layout_below="@+id/locked60fps_checkbox"
-        android:layout_alignLeft="@+id/play_stop_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/play_stop_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SimpleGrafika</string>
+    <string name="preparing_content">Preparing content.....</string>
 </resources>

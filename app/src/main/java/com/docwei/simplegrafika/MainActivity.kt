@@ -11,9 +11,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         findViewById<TextView>(R.id.playingmovie).setOnClickListener {
-            var intent = Intent(this@MainActivity, PlayingMovieActivity::class.java)
+            var intent = Intent(this@MainActivity, PlayMovieActivity::class.java)
             startActivity(intent)
         }
-
+        ContentManager.initialize(this)
+        val cm: ContentManager = ContentManager.instance!!
+        if (!cm.isContentCreated(this)) {
+            cm.createAll(this)
+        }
     }
 }

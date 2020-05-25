@@ -13,12 +13,12 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="50dp"
             android:background="#1abc9c"
             android:id="@+id/playingmovie"
             android:text="PlayingMovieWithTexture"
             android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:textSize="30sp" />
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
